@@ -1,0 +1,6 @@
+body {
+    display: flex;
+    align-items: center;
+    padding-bottom: 75px;
+    background: url(../img/bg.png) center no-repeat,center no-repeat #282b30
+}
