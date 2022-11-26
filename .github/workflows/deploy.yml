@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@master        
       - uses: SamKirkland/FTP-Deploy-Action@2.0.0   
-         env:                                        
+        env:                                        
           FTP_SERVER: mh.rsw.jp
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }} 
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }} 
@@ -19,7 +19,7 @@ jobs:
           EXCLUDE: |
             **/.git*
             **/.git*/**
-            LICENSE
-            Plam.md
-            README.md
-            example.config.php
+            **/LICENSE
+            **/Plam.md
+            **/README.md
+            **/example.config.php
