@@ -1,15 +1,6 @@
 <?php
-require __DIR__ . "/includes/discord.php";
-require __DIR__ . "/config.php";
-
-function is_animated($image){
-	$ext = substr($image, 0, 2);
-	if($ext == "a_"){
-		return ".gif";
-	}else{
-		return ".png";
-	}
-}
+require __DIR__ . "./includes/discord.php";
+require __DIR__ . "./config.php";
 ?>
 <head>
     <meta charset="utf-8">
@@ -20,7 +11,7 @@ function is_animated($image){
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-	<main>
+	<main class="body">
 		<h1 class="text-center text-light">Protect Discord</h1>
 	</main>
 </body>
