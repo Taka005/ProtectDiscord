@@ -1,6 +1,20 @@
+html,
+body {
+    height: 100%;
+}
+
 body {
     display: flex;
     align-items: center;
     padding-bottom: 75px;
     background: url(../img/bg.png) center no-repeat,center no-repeat #282b30
+}
+
+main {
+    width: 100%;
+    max-width: 300px;
+    max-height: 350px;
+    padding: 15px;
+    margin: auto;
+    border-radius: 10px;
 }
