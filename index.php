@@ -1,6 +1,6 @@
 <?php
-require __DIR__ . "./includes/discord.php";
-require __DIR__ . "./config.php";
+require __DIR__ . "/includes/discord.php";
+require __DIR__ . "/config.php";
 ?>
 <head>
     <meta charset="utf-8">
