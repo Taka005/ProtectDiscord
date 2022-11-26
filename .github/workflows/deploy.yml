@@ -10,13 +10,13 @@ jobs:
     steps:
       - uses: actions/checkout@master        
       - uses: SamKirkland/FTP-Deploy-Action@2.0.0   
-        env:                                        
-          FTP_SERVER: mh.rsw.jp
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }} 
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }} 
-          LOCAL_DIR: ./                          
-          REMOTE_DIR: /reports.cf
-          EXCLUDE: |
+        with:                                        
+          server: mh.rsw.jp
+          username: ${{ secrets.FTP_USERNAME }} 
+          password: ${{ secrets.FTP_PASSWORD }} 
+          local_dir: ./                          
+          remote_dir: /reports.cf
+          exclude: |
             **/.git*
             **/.git*/**
             LICENSE
