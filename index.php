@@ -20,7 +20,7 @@ function is_animated($image){
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-	<main">
+	<main>
 		<h1 class="text-center text-light">Protect Discord</h1>
 	</main>
 </body>

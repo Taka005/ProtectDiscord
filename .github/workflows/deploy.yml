@@ -16,7 +16,7 @@ jobs:
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }} 
           LOCAL_DIR: ./                          
           REMOTE_DIR: /reports.cf
-          exclude: |
+          EXCLUDE: |
             **/.git*
             **/.git*/**
             LICENSE
