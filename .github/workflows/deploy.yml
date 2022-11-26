@@ -19,7 +19,7 @@ jobs:
           EXCLUDE: |
             **/.git*
             **/.git*/**
-            **/LICENSE
-            **/Plam.md
-            **/README.md
-            **/example.config.php
+            LICENSE
+            Plam.md
+            README.md
+            example.config.php
