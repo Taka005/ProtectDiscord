@@ -14,18 +14,24 @@ require "./includes/lib.php";
 </head>
 <body>
     <header>
-        <nav class="navbar nnavbar-expand-sm avbar-dark bg-dark">
+        <nav class="navbar nnavbar-expand-sm avbar-dark bg-dark mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand">Protect Discord</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-link active" aria-current="page" href="#">ホーム</a>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav4">
+                    <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">トップ<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#">利用規約</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#">プライバシーポリシー</a>
-                    </div>
+                    </li>
+                    </ul>
                 </div>
                 <form class="d-flex">
                     <button class="btn btn-outline-success" type="submit">ログイン</button>
@@ -41,4 +47,7 @@ require "./includes/lib.php";
             <input name="id" class="form-control form-control-lg" placeholder="検索するユーザーID" autocomplete="off" required>
         </form>
 	</main>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
 </body>
