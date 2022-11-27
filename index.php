@@ -12,8 +12,12 @@ require "./config.php";
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
 <body>
-	<main class="p-0 base">
-		<h1 class="text-center text-light">Protect Discord</h1>
+	<main>
+        <div class="container w-75">
+		    <h1 class="text-center text-light">Protect Discord</h1>
+            <form action="" method="post" class="mb-4 position-absolute top-50 start-50 translate-middle">
+                <input name="id" class="form-control form-control-lg" placeholder="検索するユーザーID" autocomplete="off" required>
+            </form>
+        </div>
 	</main>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script>
 </body>
