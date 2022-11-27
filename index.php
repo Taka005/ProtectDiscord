@@ -17,15 +17,15 @@ require __DIR__."/includes/lib.php";
         <nav class="navbar navbar-expand-md avbar-dark bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand">Protect Discord</a>
-                <form class="container-fluid justify-content-start">
+                <form class="container-fluid justify-content-start" action="./includes/redirect" method="post">
                     <button class="btn btn-sm btn-outline-secondary">利用規約</button>
                     <button class="btn btn-sm btn-outline-secondary">プライバシーポリシー</button>
                 </form>
-                <form class="form-inline">
+                <form class="form-inline" action="./includes/redirect" method="post">
                     <?php if(!isset($_SESSION["user"])){ ?>
-                        <button class="btn btn-outline-success my-2 my-sm-0" onclick="loction.href='<?=$auth_url = url($client_id, $redirect_url, $scopes)?>'">ログイン</button>
+                        <button class="btn btn-outline-success my-2 my-sm-0" name="login">ログイン</button>
                     <?php }else{ ?>
-                        <button class="btn btn-outline-danger my-2 my-sm-0" onclick="loction.href='./includes/logout'">ログアウト</button>
+                        <button class="btn btn-outline-danger my-2 my-sm-0" name="logout">ログアウト</button>
                     <?php } ?>
                 </form>
             </div>
