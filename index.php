@@ -21,7 +21,7 @@ require "./includes/lib.php";
                     <button class="btn btn-sm btn-outline-secondary" >利用規約</button>
                     <button class="btn btn-sm btn-outline-secondary" >プライバシーポリシー</button>
                 </form>
-                <form class="d-flex">
+                <form class="form-inline">
                     <?php if(!isset($_SESSION["user"])){ ?>
                         <button class="btn btn-outline-success" onclick="loction.href='<?=$auth_url = url($client_id, $redirect_url, $scopes)?>'">ログイン</button>
                     <?php }else{ ?>
