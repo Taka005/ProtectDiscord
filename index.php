@@ -2,10 +2,6 @@
 require "./includes/discord.php";
 require "./config.php";
 require "./includes/lib.php";
-
-if($_POST["url"]){
-
-}
 ?>
 <head>
     <meta charset="utf-8">
