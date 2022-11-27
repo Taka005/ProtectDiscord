@@ -14,16 +14,9 @@ require "./includes/lib.php";
 </head>
 <body>
 	<main>
-        <div class="container w-75">
-		    <h1 class="text-center text-light my-5">Protect Discord</h1>
-        <div>
+		<h1 class="text-center text-light my-5">Protect Discord</h1>
         <form action="" method="post" class="mb-4 position-absolute top-50 start-50 translate-middle">
             <input name="id" class="form-control form-control-lg" placeholder="検索するユーザーID" autocomplete="off" required>
         </form>
 	</main>
-    <footer class="footer">
-        <div class="container text-center">
-          <p class="text-muted">©︎2022 Taka005</p>
-        </div>
-    </footer>
 </body>
