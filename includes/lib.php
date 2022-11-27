@@ -1,5 +1,5 @@
 <?php
-require "../config.php";
+require "./config.php";
 
 function user($id,$token){
     if(!is_numeric($id)) return false;

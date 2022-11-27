@@ -5,3 +5,28 @@ body {
     padding-bottom: 75px;
     background: url(../img/bg.png) center no-repeat,center no-repeat #282b30
 }
+
+main {
+    width: 100%;
+    max-width: 300px;
+    max-height: 350px;
+
+    padding: 15px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+}
+.container {
+    width: auto;
+    max-width: 680px;
+    padding: 0 15px;
+}
+.container .text-muted {
+    margin: 20px 0;
+}

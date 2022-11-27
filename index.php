@@ -21,4 +21,9 @@ require "./includes/lib.php";
             <input name="id" class="form-control form-control-lg" placeholder="検索するユーザーID" autocomplete="off" required>
         </form>
 	</main>
+    <footer class="footer">
+        <div class="container text-center">
+          <p class="text-muted">©︎2022 Taka005</p>
+        </div>
+    </footer>
 </body>
