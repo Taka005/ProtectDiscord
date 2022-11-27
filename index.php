@@ -14,25 +14,13 @@ require "./includes/lib.php";
 </head>
 <body>
     <header>
-        <nav class="navbar avbar-dark bg-dark mb-3">
+        <nav class="navbar navbar-expand-lg avbar-dark bg-dark mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand">Protect Discord</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav4">
-                    <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">トップ<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">利用規約</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">プライバシーポリシー</a>
-                    </li>
-                    </ul>
-                </div>
+                <form class="container-fluid justify-content-start">
+                    <button class="btn btn-sm btn-outline-secondary" type="button">利用規約</button>
+                    <button class="btn btn-sm btn-outline-secondary" type="button">プライバシーポリシー</button>
+                </form>
                 <form class="d-flex">
                     <button class="btn btn-outline-success" type="submit">ログイン</button>
                 </form>
