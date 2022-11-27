@@ -16,7 +16,7 @@ require __DIR__."/includes/lib.php";
     <header class="fixed-top">
         <nav class="navbar navbar-expand-md avbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand">Protect Discord</a>
+                <a class="navbar-brand text-light my5">Protect Discord</a>
                 <form class="container-fluid justify-content-start" action="./includes/redirect" method="post">
                     <button class="btn btn-sm btn-outline-secondary">利用規約</button>
                     <button class="btn btn-sm btn-outline-secondary">プライバシーポリシー</button>
@@ -33,7 +33,7 @@ require __DIR__."/includes/lib.php";
     </header>
 	<main>    
         <div class="position-absolute start-50 translate-middle">
-		    <h1 class="text-center text-light my-5">Protect Discord</h1>
+		    <h1 class="text-center text-light my-5 display-4">Protect Discord</h1>
         </div>
         <form action="" method="post" class="mb-4 position-absolute top-50 start-50 translate-middle">
             <input name="id" class="form-control form-control-lg" placeholder="検索するユーザーID" autocomplete="off" required>
