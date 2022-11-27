@@ -22,7 +22,7 @@ require "./includes/lib.php";
                     <button class="btn btn-sm btn-outline-secondary" type="button">プライバシーポリシー</button>
                 </form>
                 <form class="d-flex">
-                    <button class="btn btn-outline-success" type="submit">ログイン</button>
+                    <button class="btn btn-outline-success me-2" type="submit" onclick="'loction.href='<?=$auth_url = url($client_id, $redirect_url, $scopes)?>">ログイン</button>
                 </form>
             </div>
         </nav>
