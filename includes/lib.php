@@ -15,3 +15,4 @@ function user($id,$token){
     curl_close($ch);
     return json_decode($res,JSON_BIGINT_AS_STRING);
 }
+?>

@@ -7,3 +7,4 @@ get_user();
 
 header("Location: ../");
 exit;
+?>
