@@ -14,7 +14,7 @@ require "./includes/lib.php";
 </head>
 <body>
     <header class="fixed-top">
-        <nav class="navbar navbar-expand-sm avbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg avbar-dark bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand">Protect Discord</a>
                 <form class="container-fluid justify-content-start">
