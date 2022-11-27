@@ -16,10 +16,11 @@ jobs:
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }} 
           LOCAL_DIR: ./                          
           REMOTE_DIR: /reports.cf
-          EXCLUDE: |
+        with:
+          exclude: |
             **/.git*
             **/.git*/**
-            **/LICENSE
-            **/Plam.md
-            **/README.md
-            **/example.config.php
+            LICENSE
+            Plam.md
+            README.md
+            example.config.php
