@@ -22,7 +22,11 @@ require "./includes/lib.php";
                     <button class="btn btn-sm btn-outline-secondary" >プライバシーポリシー</button>
                 </form>
                 <form class="d-flex">
-                    <button class="btn btn-outline-success" onclick="loction.href='<?=$auth_url = url($client_id, $redirect_url, $scopes)?>'">ログイン</button>
+                    <?php if(!isset($_SESSION["user"])){ ?>
+                        <button class="btn btn-outline-success" onclick="loction.href='<?=$auth_url = url($client_id, $redirect_url, $scopes)?>'">ログイン</button>
+                    <?php }else{ ?>
+                        <button class="btn btn-outline-danger" onclick="loction.href='./includes/logout'">ログアウト</button>
+                    <?php } ?>
                 </form>
             </div>
         </nav>
