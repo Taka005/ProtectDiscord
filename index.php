@@ -1,7 +1,7 @@
 <?php
-require "./includes/discord.php";
-require "./config.php";
-require "./includes/lib.php";
+require __DIR__."/includes/discord.php";
+require __DIR__."/config.php";
+require __DIR__."/includes/lib.php";
 ?>
 <head>
     <meta charset="utf-8">
@@ -18,8 +18,8 @@ require "./includes/lib.php";
             <div class="container-fluid">
                 <a class="navbar-brand">Protect Discord</a>
                 <form class="container-fluid justify-content-start">
-                    <button class="btn btn-sm btn-outline-secondary" >利用規約</button>
-                    <button class="btn btn-sm btn-outline-secondary" >プライバシーポリシー</button>
+                    <button class="btn btn-sm btn-outline-secondary">利用規約</button>
+                    <button class="btn btn-sm btn-outline-secondary">プライバシーポリシー</button>
                 </form>
                 <form class="form-inline">
                     <?php if(!isset($_SESSION["user"])){ ?>

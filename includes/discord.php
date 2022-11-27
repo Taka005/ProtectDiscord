@@ -8,12 +8,12 @@ function gen_state(){
     return $_SESSION["state"];
 }
 
-function url($clientid, $redirect, $scope){
+function url($clientid,$redirect,$scope){
     $state = gen_state();
-    return "https://discordapp.com/oauth2/authorize?response_type=code&client_id" . $clientid . "&redirect_uri=" . $redirect . "&scope=" . $scope . "&state=" . $state;
+    return "https://discordapp.com/oauth2/authorize?response_type=code&client_id=".$clientid."&redirect_uri=".$redirect."&scope=".$scope."&state=".$state;
 }
 
-function init($redirect_url, $client_id, $client_secret){
+function init($redirect_url,$client_id,$client_secret){
     $code = $_GET["code"];
     $state = $_GET["state"];
     $url = $GLOBALS["base_url"] . "/api/oauth2/token";
