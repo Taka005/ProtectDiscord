@@ -14,7 +14,7 @@ require "./includes/lib.php";
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-dark bg-dark">
+        <nav class="navbar nnavbar-expand-sm avbar-dark bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand">Protect Discord</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
