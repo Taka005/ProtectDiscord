@@ -13,8 +13,8 @@ require "./includes/lib.php";
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
 <body>
-    <header>
-        <nav class="navbar avbar-dark bg-dark mb-3">
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-sm avbar-dark bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand">Protect Discord</a>
                 <form class="container-fluid justify-content-start">
