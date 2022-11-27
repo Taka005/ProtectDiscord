@@ -8,3 +8,4 @@ $scopes = "identify";
 $redirect_url = "";
 
 $token = "";
+?>
