@@ -23,9 +23,9 @@ require "./includes/lib.php";
                 </form>
                 <form class="form-inline">
                     <?php if(!isset($_SESSION["user"])){ ?>
-                        <button class="btn btn-outline-success" onclick="loction.href='<?=$auth_url = url($client_id, $redirect_url, $scopes)?>'">ログイン</button>
+                        <button class="btn btn-outline-success my-2 my-sm-0" onclick="loction.href='<?=$auth_url = url($client_id, $redirect_url, $scopes)?>'">ログイン</button>
                     <?php }else{ ?>
-                        <button class="btn btn-outline-danger" onclick="loction.href='./includes/logout'">ログアウト</button>
+                        <button class="btn btn-outline-danger my-2 my-sm-0" onclick="loction.href='./includes/logout'">ログアウト</button>
                     <?php } ?>
                 </form>
             </div>
