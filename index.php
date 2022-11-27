@@ -18,11 +18,11 @@ require "./includes/lib.php";
             <div class="container-fluid">
                 <a class="navbar-brand">Protect Discord</a>
                 <form class="container-fluid justify-content-start">
-                    <button class="btn btn-sm btn-outline-secondary" type="button">利用規約</button>
-                    <button class="btn btn-sm btn-outline-secondary" type="button">プライバシーポリシー</button>
+                    <button class="btn btn-sm btn-outline-secondary" >利用規約</button>
+                    <button class="btn btn-sm btn-outline-secondary" >プライバシーポリシー</button>
                 </form>
                 <form class="d-flex">
-                    <button class="btn btn-outline-success" type="submit" onclick="loction.href='<?=$auth_url = url($client_id, $redirect_url, $scopes)?>'">ログイン</button>
+                    <button class="btn btn-outline-success" onclick="loction.href='<?=$auth_url = url($client_id, $redirect_url, $scopes)?>'">ログイン</button>
                 </form>
             </div>
         </nav>
