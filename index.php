@@ -1,15 +1,6 @@
 <?php
-require __DIR__ . "/includes/discord.php";
-require __DIR__ . "/config.php";
-
-function is_animated($image){
-	$ext = substr($image, 0, 2);
-	if($ext == "a_"){
-		return ".gif";
-	}else{
-		return ".png";
-	}
-}
+require "./includes/discord.php";
+require "./config.php";
 ?>
 <head>
     <meta charset="utf-8">
