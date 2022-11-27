@@ -14,7 +14,7 @@ require "./includes/lib.php";
 </head>
 <body>
 	<main>
-        <div class="position-absolute top-0 start-50 translate-middle">
+        <div class="position-absolute start-50 translate-middle">
 		    <h1 class="text-center text-light my-5">Protect Discord</h1>
         </div>
         <form action="" method="post" class="mb-4 position-absolute top-50 start-50 translate-middle">
