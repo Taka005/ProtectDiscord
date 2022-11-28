@@ -54,7 +54,7 @@ if(isset($_POST["id"])){
                     <a href="#" class="btn btn-primary">報告する</a>
                 </div>
             </div>
-        <?php }else{ ?>
+        <?php }else if($_POST["id"]){ ?>
             <div class="card text-center">
                 <div class="card-body">
                     <h5 class="card-title">対象のユーザは見つかりませんでした</h5>
