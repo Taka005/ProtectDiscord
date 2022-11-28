@@ -3,8 +3,8 @@ require __DIR__."/includes/discord.php";
 require __DIR__."/config.php";
 require __DIR__."/includes/lib.php";
 
-if(isset($_POST["id"])){
-    $user = user($_POST["id"],$token);
+if(isset($_GET["id"])){
+    $user = user(htmlspecialchars($_GET["id"]),$token);
 }
 ?>
 <head>
@@ -40,9 +40,33 @@ if(isset($_POST["id"])){
         <div class="position-absolute start-50 translate-middle">
 		    <h1 class="text-center text-light my-5 display-4">Protect Discord</h1>
         </div>
-        <form action="./search" method="get" class="mb-4 position-absolute top-50 start-50 translate-middle">
-            <input name="id" type="number" class="form-control form-control-lg" placeholder="検索するユーザーID" autocomplete="off" required>
-        </form>
+        <?php if(isset($user)&&isset($_GET["id"])){ ?>
+            <div class="card text-center">
+                <div class="card-header">
+                    <?= $user["id"] ?>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"><?= $user["username"] ?></h5>
+                    <p class="card-text">製作中....</p>
+                    <a href="./report" class="btn btn-danger">報告</a>
+                    <a href="./" class="btn btn-outline-dark">戻る</a>
+                </div>
+            </div>
+        <?php }else if(isset($_GET["id"])){ ?>
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">対象のユーザは見つかりませんでした</h5>
+                    <a href="./" class="btn btn-outline-dark">戻る</a>
+                </div>
+            </div>
+        <?php }else{ ?>
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">検索するユーザーを指定してください</h5>
+                    <a href="./" class="btn btn-outline-dark">戻る</a>
+                </div>
+            </div>
+        <?php } ?>
 	</main>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
