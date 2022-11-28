@@ -26,7 +26,7 @@ require __DIR__."/includes/lib.php";
                     <?php if(!isset($_SESSION["user"])){ ?>
                         <button class="btn btn-outline-success my-2 my-sm-0" name="login">ログイン</button>
                     <?php }else{ ?>
-                        <button class="btn btn-outline-danger my-2 my-sm-0" name="logout">ログアウト</button>
+                        <button class="btn btn-outline-danger my-2 my-sm-0" onclick="window.open('http:\/\/www.facebook.com','_blank')">ログアウト</button>
                     <?php } ?>
                 </form>
             </div>
