@@ -11,6 +11,6 @@ function user($id,$token){
     ));
     $res =  curl_exec($ch);
     curl_close($ch);
-    return json_decode($res,JSON_BIGINT_AS_STRING,true);
+    return json_decode($res,true);
 }
 ?>

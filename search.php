@@ -43,7 +43,7 @@ if(isset($_GET["id"])){
                     <?= $user["id"] ?>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title"><?= $user["username"] ?></h5>
+                    <h5 class="card-title"><?= $user["username"].$user["discriminator"] ?></h5>
                     <p class="card-text">製作中....</p>
                     <a href="./report" class="btn btn-danger">報告</a>
                     <a href="./" class="btn btn-outline-dark">戻る</a>
