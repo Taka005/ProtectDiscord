@@ -18,15 +18,15 @@ require __DIR__."/includes/lib.php";
             <div class="container-fluid">
                 <a class="navbar-brand text-light my5">Protect Discord</a>
                 <form class="container-fluid justify-content-start">
-                    <button class="btn btn-sm btn-outline-secondary" onclick="window.location='./terms'">利用規約</button>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="window.location='./privacy-policy'">プライバシーポリシー</button>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="window.location('./terms')">利用規約</button>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="window.location('./privacy-policy')">プライバシーポリシー</button>
                     <button class="btn btn-sm btn-outline-secondary" onclick="window.open('https:\/\/discord.gg/7xHNfqYgxb')">サポートサーバー</button>
                 </form>
                 <form class="form-inline">
                     <?php if(!isset($_SESSION["user"])){ ?>
-                        <button class="btn btn-outline-success my-2 my-sm-0" onclick="window.location='<?= url($client_id,$redirect_url,$scopes) ?>'">ログイン</button>
+                        <button class="btn btn-outline-success my-2 my-sm-0" onclick="window.location('<?= url($client_id,$redirect_url,$scopes) ?>')">ログイン</button>
                     <?php }else{ ?>
-                        <button class="btn btn-outline-danger my-2 my-sm-0" onclick="window.location='./includes/logout'">ログアウト</button>
+                        <button class="btn btn-outline-danger my-2 my-sm-0" onclick="window.location('./includes/logout')">ログアウト</button>
                     <?php } ?>
                 </form>
             </div>
