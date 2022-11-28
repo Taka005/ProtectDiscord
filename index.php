@@ -18,8 +18,9 @@ require __DIR__."/includes/lib.php";
             <div class="container-fluid">
                 <a class="navbar-brand text-light my5">Protect Discord</a>
                 <form class="container-fluid justify-content-start" action="./includes/redirect" method="post">
-                    <button class="btn btn-sm btn-outline-secondary">利用規約</button>
-                    <button class="btn btn-sm btn-outline-secondary">プライバシーポリシー</button>
+                    <button class="btn btn-sm btn-outline-secondary" name="terms">利用規約</button>
+                    <button class="btn btn-sm btn-outline-secondary" name="privacy-policy">プライバシーポリシー</button>
+                    <button class="btn btn-sm btn-outline-secondary" name="support">サポートサーバー</button>
                 </form>
                 <form class="form-inline" action="./includes/redirect" method="post">
                     <?php if(!isset($_SESSION["user"])){ ?>

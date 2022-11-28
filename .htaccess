@@ -6,4 +6,11 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\html -f
+RewriteRule ^(.*)$ $1.html
+
+RewriteCond %{THE_REQUEST} \.(php|html)\ HTTP
+RewriteRule ^(.*)\.(php|html)$ /$1 [R=301,L]
 </IfModule>

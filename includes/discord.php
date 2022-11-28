@@ -36,12 +36,12 @@ function init($redirect_url,$client_id,$client_secret){
 }
 
 function get_user(){
-    $url = $GLOBALS["base_url"] . "/api/users/@me";
-    $headers = array("Content-Type: application/x-www-form-urlencoded", "Authorization: Bearer " . $_SESSION["access_token"]);
+    $url = $GLOBALS["base_url"]."/api/users/@me";
+    $headers = array("Content-Type: application/x-www-form-urlencoded","Authorization: Bearer ".$_SESSION["access_token"]);
     $curl = curl_init();
-    curl_setopt($curl, CURLOPT_URL, $url);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+    curl_setopt($curl,CURLOPT_URL,$url);
+    curl_setopt($curl,CURLOPT_RETURNTRANSFER,true);
+    curl_setopt($curl,CURLOPT_HTTPHEADER,$headers);
     $response = curl_exec($curl);
     curl_close($curl);
     $results = json_decode($response,true);
