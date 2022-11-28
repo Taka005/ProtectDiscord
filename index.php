@@ -17,16 +17,16 @@ require __DIR__."/includes/lib.php";
         <nav class="navbar navbar-expand-md avbar-dark bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand text-light my5">Protect Discord</a>
-                <form class="container-fluid justify-content-start">
-                    <button class="btn btn-sm btn-outline-secondary" onclick="window.location('./terms')">利用規約</button>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="window.location('./privacy-policy')">プライバシーポリシー</button>
+                <form class="container-fluid justify-content-start" action="./includes/redirect" method="post">
+                    <button class="btn btn-sm btn-outline-secondary" name="terms">利用規約</button>
+                    <button class="btn btn-sm btn-outline-secondary" name="privacy-policy">プライバシーポリシー</button>
                     <button class="btn btn-sm btn-outline-secondary" onclick="window.open('https:\/\/discord.gg/7xHNfqYgxb')">サポートサーバー</button>
                 </form>
-                <form class="form-inline">
+                <form class="form-inline" action="./includes/redirect" method="post">
                     <?php if(!isset($_SESSION["user"])){ ?>
-                        <button class="btn btn-outline-success my-2 my-sm-0" onclick="window.location('<?= url($client_id,$redirect_url,$scopes) ?>')">ログイン</button>
+                        <button class="btn btn-outline-success my-2 my-sm-0" name="login">ログイン</button>
                     <?php }else{ ?>
-                        <button class="btn btn-outline-danger my-2 my-sm-0" onclick="window.location('./includes/logout')">ログアウト</button>
+                        <button class="btn btn-outline-danger my-2 my-sm-0" name="logout">ログアウト</button>
                     <?php } ?>
                 </form>
             </div>
