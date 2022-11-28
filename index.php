@@ -1,11 +1,6 @@
 <?php
 require __DIR__."/includes/discord.php";
 require __DIR__."/config.php";
-require __DIR__."/includes/lib.php";
-
-if(isset($_POST["id"])){
-    $user = user($_POST["id"],$token);
-}
 ?>
 <head>
     <meta charset="utf-8">
