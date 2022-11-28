@@ -2,7 +2,7 @@
 require __DIR__."/../config.php";
 
 function user($id,$token){
-    if(!is_numeric($id)) return false;
+    if(!is_numeric($id)) return;
     
     $ch = curl_init();
     curl_setopt($ch,CURLOPT_URL,"https://discord.com/api/v10/users/".$id); 
@@ -13,6 +13,6 @@ function user($id,$token){
     ));
     $res =  curl_exec($ch);
     curl_close($ch);
-    return json_decode($res,JSON_BIGINT_AS_STRING);
+    return json_decode($res,JSON_BIGINT_AS_STRING,true);
 }
 ?>

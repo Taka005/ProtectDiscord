@@ -2,6 +2,11 @@
 require __DIR__."/includes/discord.php";
 require __DIR__."/config.php";
 require __DIR__."/includes/lib.php";
+
+if(isset($_POST["id"])){
+    $user = user($id,$token);
+    var_dump($user);
+}
 ?>
 <head>
     <meta charset="utf-8">
@@ -37,7 +42,7 @@ require __DIR__."/includes/lib.php";
 		    <h1 class="text-center text-light my-5 display-4">Protect Discord</h1>
         </div>
         <form action="" method="post" class="mb-4 position-absolute top-50 start-50 translate-middle">
-            <input name="id" class="form-control form-control-lg" placeholder="検索するユーザーID" autocomplete="off" required>
+            <input name="id" type="number" min="18" max="19" class="form-control form-control-lg" placeholder="検索するユーザーID" autocomplete="off" required>
         </form>
 	</main>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
