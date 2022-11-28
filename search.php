@@ -37,9 +37,6 @@ if(isset($_GET["id"])){
         </nav>
     </header>
 	<main>    
-        <div class="position-absolute start-50 translate-middle">
-		    <h1 class="text-center text-light my-5 display-4">Protect Discord</h1>
-        </div>
         <?php if(isset($user)&&isset($_GET["id"])){ ?>
             <div class="card text-center">
                 <div class="card-header">
