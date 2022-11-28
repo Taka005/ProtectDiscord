@@ -15,7 +15,7 @@ require __DIR__."/config.php";
     <header class="fixed-top">
         <nav class="navbar navbar-expand-md avbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand text-light my5 font-weight-bold" href="./">Protect Discord</a>
+                <a class="navbar-brand text-light my5" href="./">Protect Discord</a>
                 <form class="container-fluid justify-content-start">
                     <a class="btn btn-sm btn-outline-secondary" href="./terms" role="button">利用規約</a>
                     <a class="btn btn-sm btn-outline-secondary" href="./privacy-policy" role="button">プライバシーポリシー</a>
@@ -33,7 +33,7 @@ require __DIR__."/config.php";
     </header>
 	<main>    
         <div class="position-absolute start-50 translate-middle">
-		    <h1 class="text-center text-light my-5 display-4">Protect Discord</h1>
+		    <h1 class="text-center text-light my-5 display-4 font-weight-bold">Protect Discord</h1>
         </div>
         <form action="./search" method="get" class="mb-4 position-absolute top-50 start-50 translate-middle">
             <input name="id" type="number" class="form-control form-control-lg" placeholder="検索するユーザーID" autocomplete="off" required>
