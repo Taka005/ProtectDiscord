@@ -53,7 +53,7 @@ if(isset($_GET["id"])){
         <?php }else if(isset($_GET["id"])){ ?>
             <div class="card text-center">
                 <div class="card-body">
-                    <h5 class="card-title">対象のユーザは見つかりませんでした</h5>
+                    <h5 class="card-title">対象のユーザが見つかりませんでした</h5>
                     <a href="./" class="btn btn-outline-dark">戻る</a>
                 </div>
             </div>

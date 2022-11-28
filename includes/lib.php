@@ -12,6 +12,7 @@ function user($id,$token){
     $res =  curl_exec($ch);
     curl_close($ch);
     $json = json_decode($res,true);
+    if(isset($json["message"])) return;
     return $json;
 }
 
