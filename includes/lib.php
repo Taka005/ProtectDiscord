@@ -14,4 +14,13 @@ function user($id,$token){
     $json = json_decode($res,true);
     return $json;
 }
+
+function is_animated($image){
+	$ext = substr($image, 0, 2);
+	if($ext == "a_"){
+		return ".gif";
+	}else{
+		return ".png";
+	}
+}
 ?>

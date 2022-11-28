@@ -42,8 +42,9 @@ if(isset($_GET["id"])){
                 <div class="card-header">
                     <?= $user["id"] ?>
                 </div>
+                <img src="<?= "https:\/\/cdn.discordapp.com/avatars/".$user["id"]."/".$user["avatar"].is_animated($user["avatar"]) ?>" class="card-img-top">
                 <div class="card-body">
-                    <h5 class="card-title"><?= $user["username"].$user["discriminator"] ?></h5>
+                    <h5 class="card-title"><?= $user["username"]."#".$user["discriminator"] ?></h5>
                     <p class="card-text">製作中....</p>
                     <a href="./report" class="btn btn-danger">報告</a>
                     <a href="./" class="btn btn-outline-dark">戻る</a>
