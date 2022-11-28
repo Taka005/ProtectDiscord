@@ -15,7 +15,7 @@ require __DIR__."/config.php";
     <header class="fixed-top">
         <nav class="navbar navbar-expand-md avbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand text-light my5" href="./">Protect Discord</a>
+                <a class="navbar-brand text-light my5 font-weight-bold" href="./">Protect Discord</a>
                 <form class="container-fluid justify-content-start">
                     <a class="btn btn-sm btn-outline-secondary" href="./terms" role="button">利用規約</a>
                     <a class="btn btn-sm btn-outline-secondary" href="./privacy-policy" role="button">プライバシーポリシー</a>
