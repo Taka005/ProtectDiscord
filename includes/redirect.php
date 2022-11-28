@@ -17,4 +17,6 @@ if(isset($_POST["terms"])){
 if(isset($_POST["privacy-policy"])){
     header("Location: ../privacy-policy");
 }
+
+header("Location: ../");
 ?>
