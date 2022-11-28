@@ -40,7 +40,7 @@ if(isset($_POST["id"])){
         <div class="position-absolute start-50 translate-middle">
 		    <h1 class="text-center text-light my-5 display-4">Protect Discord</h1>
         </div>
-        <form action="" method="post" class="mb-4 position-absolute top-50 start-50 translate-middle">
+        <form action="./index" method="post" class="mb-4 position-absolute top-50 start-50 translate-middle">
             <input name="id" type="number" class="form-control form-control-lg" placeholder="検索するユーザーID" autocomplete="off" required>
         </form>
         <?php if(isset($user)){ ?>
