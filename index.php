@@ -21,16 +21,16 @@ if(isset($_POST["id"])){
         <nav class="navbar navbar-expand-md avbar-dark bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand text-light my5">Protect Discord</a>
-                <form class="container-fluid justify-content-start" action="./includes/redirect" method="post">
-                    <button class="btn btn-sm btn-outline-secondary" name="terms">利用規約</button>
-                    <button class="btn btn-sm btn-outline-secondary" name="privacy-policy">プライバシーポリシー</button>
-                    <button class="btn btn-sm btn-outline-secondary" onclick="window.open('https:\/\/discord.gg/7xHNfqYgxb')">サポートサーバー</button>
+                <form class="container-fluid justify-content-start">
+                    <a class="btn btn-sm btn-outline-secondary" href="./terms" role="button">利用規約</a>
+                    <a class="btn btn-sm btn-outline-secondary" href="./privacy-policy" role="button">プライバシーポリシー</a>
+                    <a class="btn btn-sm btn-outline-secondary" href="https://discord.gg/7xHNfqYgxb" target="_blank" role="button">サポートサーバー</a>
                 </form>
-                <form class="form-inline" action="./includes/redirect" method="post">
+                <form class="form-inline">
                     <?php if(!isset($_SESSION["user"])){ ?>
-                        <button class="btn btn-outline-success my-2 my-sm-0" name="login">ログイン</button>
+                        <a class="btn btn-outline-success my-2 my-sm-0" href="<?= url($client_id,$redirect_url,$scopes) ?>" role="button">ログイン</a>
                     <?php }else{ ?>
-                        <button class="btn btn-outline-danger my-2 my-sm-0" name="logout">ログアウト</button>
+                        <a class="btn btn-outline-danger my-2 my-sm-0"  href="./includes/logout" role="button">ログアウト</a>
                     <?php } ?>
                 </form>
             </div>
@@ -40,7 +40,7 @@ if(isset($_POST["id"])){
         <div class="position-absolute start-50 translate-middle">
 		    <h1 class="text-center text-light my-5 display-4">Protect Discord</h1>
         </div>
-        <form action="./index" method="post" class="mb-4 position-absolute top-50 start-50 translate-middle">
+        <form action="./search" method="get" class="mb-4 position-absolute top-50 start-50 translate-middle">
             <input name="id" type="number" class="form-control form-control-lg" placeholder="検索するユーザーID" autocomplete="off" required>
         </form>
         <?php if(isset($user)){ ?>
