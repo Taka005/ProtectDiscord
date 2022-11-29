@@ -35,21 +35,21 @@ function dm($id,$message,$token){
         "User-Agent:DiscordBot (https://reports.cf, 10)",
         "Content-type: application/json"
     ));
-    curl_setopt($ch, CURLOPT_POST, "{'recipient_id':".$id."}");
-    $res =  curl_exec($ch);
+    curl_setopt($ch,CURLOPT_POST,"{'recipient_id':'".$id."'}");
+    $res = curl_exec($ch);
     curl_close($ch);
     $json = json_decode($res,true);
 
     $ch = curl_init();
     curl_setopt($ch,CURLOPT_URL,"https://discord.com/api/v10/channels/".$json["id"]."/messages"); 
     curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
-    curl_setopt($ch, CURLOPT_POST, "{'content':".$message."}");
+    curl_setopt($ch,CURLOPT_POST,"{'content':'".$message."'}");
     curl_setopt($ch,CURLOPT_HTTPHEADER,array(
         "Authorization: Bot ".$token,
         "User-Agent:DiscordBot (https://reports.cf, 10)",
         "Content-type: application/json"
     ));
-    $res =  curl_exec($ch);
+    $res = curl_exec($ch);
     curl_close($ch);
     $json = json_decode($res,true);
     return $json;
