@@ -3,6 +3,10 @@ require __DIR__."/includes/discord.php";
 require __DIR__."/config.php";
 require __DIR__."/includes/lib.php";
 
+//if(!isset($_SESSION["user"])){
+//    header("Location: ".url($client_id,$redirect_url,$scopes));
+//}
+
 if(isset($_POST["id"])&&isset($_POST["class"])&&isset($_POST["content"])){
     $user = user(htmlspecialchars($_POST["id"]),$token);
     if(isset($user)){

@@ -41,7 +41,7 @@ if(isset($_GET["id"])){
         </nav>
     </header>
 	<main>    
-        <form action="./send.php" method="post" class="mb-4 position-absolute top-50 start-50 translate-middle">
+        <form action="./send" method="post" class="mb-4 position-absolute top-50 start-50 translate-middle">
             <?php if(!isset($user)||!isset($_GET["id"])){ ?>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label text-light">報告するユーザー</label>
