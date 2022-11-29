@@ -50,7 +50,7 @@ if(isset($_GET["id"])){
             <?php }else{ ?>
                 <div class="mb-3">
                     <label for="staticEmail" class="form-label text-light">報告するユーザー</label>
-                    <input name="id" type="number" class="form-control" id="staticEmail" value="<?= $user["username"]."#".$user["discriminator"]."(".$user["id"].")" ?>" required readonly disabled>
+                    <input name="id" type="number" class="form-control" id="staticEmail" aria-label="<?= $user["username"]."#".$user["discriminator"]."(".$user["id"].")" ?>" required readonly disabled>
                 </div>
             <?php } ?>
             <div class="mb-3">
