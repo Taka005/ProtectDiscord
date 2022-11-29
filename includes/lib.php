@@ -28,14 +28,14 @@ function is_animated($image){
 
 function dm($id,$message,$token){
     $ch = curl_init();
-    curl_setopt($ch,CURLOPT_URL,"https://discord.com/api/v10/users/@me/channels".$id); 
+    curl_setopt($ch,CURLOPT_URL,"https://discord.com/api/v10/users/@me/channels"); 
     curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, "{'recipient_id':".$id."}");
     curl_setopt($ch,CURLOPT_HTTPHEADER,array(
         "Authorization: Bot ".$token,
         "User-Agent:DiscordBot (https://reports.cf, 10)",
         "Content-type: application/json"
     ));
+    curl_setopt($ch, CURLOPT_POSTFIELDS, "{'recipient_id':".$id."}");
     $res =  curl_exec($ch);
     curl_close($ch);
     $json = json_decode($res,true);
