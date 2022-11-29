@@ -1,12 +1,15 @@
 <?php
 require __DIR__."/config.php";
+require __DIR__."/includes/lib.php";
 require __DIR__."/includes/discord.php";
 
 //if(!isset($_SESSION["user"])){
 //    header("Location: ".url($client_id,$redirect_url,$scopes));
 //}
 
-$id = htmlspecialchars($_GET["id"]);
+if(isset($_GET["id"])){
+    $user = user(htmlspecialchars($_GET["id"]),$token);
+}
 ?>
 <head>
     <meta charset="utf-8">
@@ -39,11 +42,16 @@ $id = htmlspecialchars($_GET["id"]);
     </header>
 	<main>    
         <form action="" method="post" class="mb-4 position-absolute top-50 start-50 translate-middle">
-            <?php if(!isset($id)){ ?>
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label text-light">報告するユーザー</label>
-                <input name="id" type="number" type="text" class="form-control" id="exampleFormControlInput1" placeholder="検索するユーザーID" required>
-            </div>
+            <?php if(!isset($user)||!isset($_GET["id"])){ ?>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label text-light">報告するユーザー</label>
+                    <input name="id" type="number" type="text" class="form-control" id="exampleFormControlInput1" placeholder="検索するユーザーID" required>
+                </div>
+            <?php }else{ ?>
+                <div class="mb-3">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">報告するユーザー</label>
+                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= $user["username"]."#".$user["discriminator"]."(".$user["id"].")" ?>" required>
+                </div>
             <?php } ?>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label text-light">返信用メールアドレス</label>

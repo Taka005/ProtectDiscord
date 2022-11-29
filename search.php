@@ -46,8 +46,8 @@ if(isset($_GET["id"])){
                 <div class="card-body">
                     <h5 class="card-title"><?= $user["username"]."#".$user["discriminator"] ?></h5>
                     <p class="card-text">製作中....</p>
-                    <form action="./report" method="get">
-                        <a name="id" class="btn btn-danger">報告</a>
+                    <form action="./report?=<?= $user["id"] ?>"  method="get">
+                        <a class="btn btn-danger">報告する</a>
                     </form>
                     <a href="./" class="btn btn-outline-dark">戻る</a>
                 </div>
