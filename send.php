@@ -51,7 +51,7 @@ if(isset($_POST["id"])&&isset($_POST["class"])&&isset($_POST["content"])){
     </header>
 	<main>    
     <?php if($success){ ?>
-        <div class="card">
+        <div class="card text-center">
             <div class="card-body">
                 <h5 class="card-title">正常に送信されました</h5>
                 <p class="card-text">審査には時間がかかることがあります<br>結果を報告するため、DiscordのDMを受信できるようにしておいてください</p>
@@ -59,7 +59,7 @@ if(isset($_POST["id"])&&isset($_POST["class"])&&isset($_POST["content"])){
             </div>
         </div>
     <?php }else{ ?>
-        <div class="card">
+        <div class="card text-center">
             <div class="card-body">
                 <h5 class="card-title">正常に送信できませんでした</h5>
                 <p class="card-text">一部の項目が入力されていないか、指定したユーザーが存在しませんでした</p>
