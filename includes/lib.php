@@ -36,9 +36,9 @@ function dm($id,$message,$token){
         "Content-type: application/json"
     ));
     curl_setopt($ch,CURLOPT_POST,true);
-    curl_setopt($ch,CURLOPT_POSTFIELDS,http_build_query(array(
+    curl_setopt($ch,CURLOPT_POSTFIELDS,array(
         "recipient_id"=>$id
-    )));
+    ));
     $res = curl_exec($ch);
     curl_close($ch);
     $json = json_decode($res,true);
@@ -52,9 +52,9 @@ function dm($id,$message,$token){
         "Content-type: application/json"
     ));
     curl_setopt($ch,CURLOPT_POST,true);
-    curl_setopt($ch,CURLOPT_POSTFIELDS,http_build_query(array(
+    curl_setopt($ch,CURLOPT_POSTFIELDS,array(
         "content"=>$message
-    )));
+    ));
     $res = curl_exec($ch);
     curl_close($ch);
     $json = json_decode($res,true);
