@@ -24,4 +24,8 @@ function is_animated($image){
 		return ".png";
 	}
 }
+
+function dm($id,$token){
+    
+}
 ?>

@@ -57,9 +57,9 @@ if(isset($_GET["id"])){
             <label for="exampleFormControlInput1" class="form-label text-light">報告内容</label>
                 <select name="class" class="form-select" aria-label="報告内容">
                     <option selected>内容を選択してください</option>
-                    <option value="1">荒らし</option>
-                    <option value="2">迷惑行為</option>
-                    <option value="3">その他</option>
+                    <option value="荒らし">荒らし</option>
+                    <option value="迷惑行為">迷惑行為</option>
+                    <option value="その他">その他</option>
             </select>
             </div>
             <div class="mb-3">
