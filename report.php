@@ -50,7 +50,7 @@ if(isset($_GET["id"])){
             <?php }else{ ?>
                 <div class="mb-3">
                     <label for="staticEmail" class="form-label text-light">報告するユーザー</label>
-                    <input name="id" type="number" class="form-control" id="staticEmail" value="<?= $user["username"]."#".$user["discriminator"]."(".$user["id"].")" ?>" required disabled>
+                    <input name="id" type="number" class="form-control" id="staticEmail" value="<?= $user["username"]."#".$user["discriminator"]."(".$user["id"].")" ?>" required readonly disabled>
                 </div>
             <?php } ?>
             <div class="mb-3">
@@ -71,10 +71,10 @@ if(isset($_GET["id"])){
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
             </div>
             <div class="mb-3">
-                <a href="./report" class="btn btn-success">送信</a>
-                <a href="./search<?php if($user) echo "?id=".$user["id"] ?>" class="btn btn-outline-dark">戻る</a>
+                <a class="btn btn-success">送信</a>
             </div>
         </form>
+        <a href="./search<?php if($user) echo "?id=".$user["id"] ?>" class="btn btn-outline-dark">戻る</a>
 	</main>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
