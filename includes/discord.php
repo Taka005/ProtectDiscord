@@ -54,6 +54,7 @@ function get_user(){
     if($results["accent_color"]) $_SESSION["accent_color"] = $results["accent_color"];
     $_SESSION["user_flags"] = $results["public_flags"];
     $_SESSION["user_premium"] = $results["premium_type"];
+    $_SESSION["email"] = $results["email"];
 
     //ログイン情報記録処理をする
 }

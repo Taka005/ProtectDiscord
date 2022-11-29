@@ -1,11 +1,6 @@
 <?php
 require __DIR__."/includes/discord.php";
 require __DIR__."/config.php";
-require __DIR__."/includes/lib.php";
-
-if(isset($_GET["id"])){
-    $user = user(htmlspecialchars($_GET["id"]),$token);
-}
 ?>
 <head>
     <meta charset="utf-8">
@@ -37,34 +32,7 @@ if(isset($_GET["id"])){
         </nav>
     </header>
 	<main>    
-        <?php if(isset($user)&&isset($_GET["id"])){ ?>
-            <div class="card text-center">
-                <div class="card-header">
-                    <?= $user["id"] ?>
-                </div>
-                <img src="<?= "https:\/\/cdn.discordapp.com/avatars/".$user["id"]."/".$user["avatar"].is_animated($user["avatar"])."?size=1024" ?>" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title"><?= $user["username"]."#".$user["discriminator"] ?></h5>
-                    <p class="card-text">製作中....</p>
-                    <a href="./report?id=<?= $user["id"] ?>" class="btn btn-danger">報告</a>
-                    <a href="./" class="btn btn-outline-dark">戻る</a>
-                </div>
-            </div>
-        <?php }else if(isset($_GET["id"])){ ?>
-            <div class="card text-center">
-                <div class="card-body">
-                    <h5 class="card-title">対象のユーザが見つかりませんでした</h5>
-                    <a href="./" class="btn btn-outline-dark">戻る</a>
-                </div>
-            </div>
-        <?php }else{ ?>
-            <div class="card text-center">
-                <div class="card-body">
-                    <h5 class="card-title">検索するユーザーを指定してください</h5>
-                    <a href="./" class="btn btn-outline-dark">戻る</a>
-                </div>
-            </div>
-        <?php } ?>
-	</main>
+      
+	</main>    
     <script src="./assets/js/script.js"></script>
 </body>
