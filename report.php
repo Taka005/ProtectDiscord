@@ -71,7 +71,9 @@ if(isset($_GET["id"])){
                 <button type="submit" class="btn btn-success">送信</button>
             </div>
         </form>
-        <a href="./search<?php if($user) echo "?id=".$user["id"] ?>" class="btn btn-outline-primary" role="button">戻る</a>
+        <div class="mb-3">
+            <a href="./search<?php if($user) echo "?id=".$user["id"] ?>" class="btn btn-outline-primary" role="button">戻る</a>
+        </div>
 	</main>
     <script src="./assets/js/script.js"></script>
 </body>
