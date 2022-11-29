@@ -1,6 +1,18 @@
 <?php
 require __DIR__."/includes/discord.php";
 require __DIR__."/config.php";
+require __DIR__."/includes/lib.php";
+
+if(isset($_POST["id"])&&isset($_POST["class"])&&isset($_POST["content"])){
+    $user = user(htmlspecialchars($_POST["id"]),$token);
+    if(isset($user)){
+        $success = true;
+    }else{
+        $success = false;
+    }
+}else{
+    $success = false;
+}
 ?>
 <head>
     <meta charset="utf-8">
@@ -32,7 +44,23 @@ require __DIR__."/config.php";
         </nav>
     </header>
 	<main>    
-      
+    <?php if($success){ ?>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">正常に送信されました</h5>
+                <p class="card-text">審査に時間がかかりますので、お待ちください。<br>結果を報告するため、DiscordのDMを受信できるようにしておいてください</p>
+                <a href="./" class="btn btn-primary">トップに戻る</a>
+            </div>
+        </div>
+    <?php }else{ ?>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">正常に送信できませんでした</h5>
+                <p class="card-text">一部の項目が入力されていないか、指定したユーザーが存在しませんでした</p>
+                <a href="./" class="btn btn-primary">トップに戻る</a>
+            </div>
+        </div>
+    <?php } ?>
 	</main>    
     <script src="./assets/js/script.js"></script>
 </body>

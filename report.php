@@ -55,7 +55,7 @@ if(isset($_GET["id"])){
             <?php } ?>
             <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label text-light">報告内容</label>
-                <select name="content" class="form-select" aria-label="報告内容">
+                <select name="class" class="form-select" aria-label="報告内容">
                     <option selected>内容を選択してください</option>
                     <option value="1">荒らし</option>
                     <option value="2">迷惑行為</option>
@@ -64,7 +64,7 @@ if(isset($_GET["id"])){
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label text-light">報告内容(証拠等のリンクを添付してください)</label>
-                <textarea name="reason" class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                <textarea name="content" class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
             </div>
             <div class="mb-3">
                 <button type="submit" class="btn btn-success">送信</button>
