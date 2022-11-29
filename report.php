@@ -5,6 +5,8 @@ require __DIR__."/includes/discord.php";
 //if(!isset($_SESSION["user"])){
 //    header("Location: ".url($client_id,$redirect_url,$scopes));
 //}
+
+$id = htmlspecialchars($_GET["id"]);
 ?>
 <head>
     <meta charset="utf-8">
@@ -37,12 +39,18 @@ require __DIR__."/includes/discord.php";
     </header>
 	<main>    
         <form action="" method="post" class="mb-4 position-absolute top-50 start-50 translate-middle">
+            <?php if(!isset($id)){ ?>
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">返信用メールアドレス</label>
+                <label for="exampleFormControlInput1" class="form-label text-light">報告するユーザー</label>
+                <input name="id" type="number" type="text" class="form-control" id="exampleFormControlInput1" placeholder="検索するユーザーID" required>
+            </div>
+            <?php } ?>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label text-light">返信用メールアドレス</label>
                 <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" required>
             </div>
             <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">報告内容</label>
+            <label for="exampleFormControlInput1" class="form-label text-light">報告内容</label>
                 <select class="form-select" aria-label="報告内容">
                     <option selected>内容を選択してください</option>
                     <option value="1">荒らし</option>
@@ -51,8 +59,12 @@ require __DIR__."/includes/discord.php";
             </select>
             </div>
             <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">報告内容(証拠等のリンクを添付してください)</label>
+                <label for="exampleFormControlTextarea1" class="form-label text-light">報告内容(証拠等のリンクを添付してください)</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+            </div>
+            <div class="mb-3">
+                <a href="./report" class="btn btn-success">送信</a>
+                <a href="./search?id=<?= $id ?>" class="btn btn-outline-dark">戻る</a>
             </div>
         </form>
 	</main>
