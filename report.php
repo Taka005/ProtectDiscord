@@ -45,7 +45,7 @@ if(isset($_GET["id"])){
             <?php if(!isset($user)||!isset($_GET["id"])){ ?>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label text-light">報告するユーザー</label>
-                    <input name="id" type="number" class="form-control" id="exampleFormControlInput1" placeholder="検索するユーザーID" required>
+                    <input name="id" type="number" class="form-control" id="exampleFormControlInput1" placeholder="検索するユーザーID">
                 </div>
             <?php }else{ ?>
                 <div class="mb-3">
@@ -59,20 +59,19 @@ if(isset($_GET["id"])){
                     <option selected>内容を選択してください</option>
                     <option value="荒らし">荒らし</option>
                     <option value="迷惑行為">迷惑行為</option>
+                    <option value="規約違反">規約違反</option>
                     <option value="その他">その他</option>
             </select>
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label text-light">報告内容(証拠等のリンクを添付してください)</label>
-                <textarea name="content" class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                <textarea name="content" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
             <div class="mb-3">
                 <button type="submit" class="btn btn-success">送信</button>
             </div>
         </form>
-        <a href="./search<?php if($user) echo "?id=".$user["id"] ?>" class="btn btn-outline-dark" role="button">戻る</a>
+        <a href="./search<?php if($user) echo "?id=".$user["id"] ?>" class="btn btn-outline-primary" role="button">戻る</a>
 	</main>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
