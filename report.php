@@ -45,12 +45,12 @@ if(isset($_GET["id"])){
             <?php if(!isset($user)||!isset($_GET["id"])){ ?>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label text-light">報告するユーザー</label>
-                    <input name="id" type="number" type="text" class="form-control" id="exampleFormControlInput1" placeholder="検索するユーザーID" required>
+                    <input name="id" type="number" class="form-control" id="exampleFormControlInput1" placeholder="検索するユーザーID" required>
                 </div>
             <?php }else{ ?>
                 <div class="mb-3">
-                    <label for="staticEmail" class="col-sm-2 col-form-label">報告するユーザー</label>
-                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= $user["username"]."#".$user["discriminator"]."(".$user["id"].")" ?>" required>
+                    <label for="staticEmail" class="form-label text-light">報告するユーザー</label>
+                    <input name="id" type="number" class="form-control" id="staticEmail" value="<?= $user["username"]."#".$user["discriminator"]."(".$user["id"].")" ?>" required disabled>
                 </div>
             <?php } ?>
             <div class="mb-3">
@@ -72,7 +72,7 @@ if(isset($_GET["id"])){
             </div>
             <div class="mb-3">
                 <a href="./report" class="btn btn-success">送信</a>
-                <a href="./search?id=<?= $id ?>" class="btn btn-outline-dark">戻る</a>
+                <a href="./search<?php if($user) echo "?id=".$user["id"] ?>" class="btn btn-outline-dark">戻る</a>
             </div>
         </form>
 	</main>
