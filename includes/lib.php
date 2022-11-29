@@ -26,7 +26,7 @@ function is_animated($image){
 	}
 }
 
-function dm($id,$token){
+function dm($id,$message,$token){
     $ch = curl_init();
     curl_setopt($ch,CURLOPT_URL,"https://discord.com/api/v10/users/@me/channels".$id); 
     curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
@@ -39,7 +39,19 @@ function dm($id,$token){
     $res =  curl_exec($ch);
     curl_close($ch);
     $json = json_decode($res,true);
-    var_dump($res);
+
+    $ch = curl_init();
+    curl_setopt($ch,CURLOPT_URL,"https://discord.com/api/v10/channels/".$json["id"]."/messages"); 
+    curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, "{'content':".$message."}");
+    curl_setopt($ch,CURLOPT_HTTPHEADER,array(
+        "Authorization: Bot ".$token,
+        "User-Agent:DiscordBot (https://reports.cf, 10)",
+        "Content-type: application/json"
+    ));
+    $res =  curl_exec($ch);
+    curl_close($ch);
+    $json = json_decode($res,true);
     return $json;
 }
 ?>

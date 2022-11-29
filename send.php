@@ -11,7 +11,8 @@ if(isset($_POST["id"])&&isset($_POST["class"])&&isset($_POST["content"])){
     $user = user(htmlspecialchars($_POST["id"]),$token);
     if(isset($user)){
         $success = true;
-        dm($user["id"],$token);
+        $message = "テストです";
+        dm($_SESSION["user_id"],$message,$token);
     }else{
         $success = false;
     }
