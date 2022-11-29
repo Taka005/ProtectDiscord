@@ -50,13 +50,12 @@ if(isset($_GET["id"])){
             <?php }else{ ?>
                 <div class="mb-3">
                     <label for="staticEmail" class="form-label text-light">報告するユーザー</label>
-                    <input name="id" type="text" class="form-control" id="staticEmail" value="<?= $user["username"]."#".$user["discriminator"]."(".$user["id"].")" ?>" readonly disabled>
+                    <input name="id" type="text" class="form-control" value="<?= $user["id"] ?>" readonly>
                 </div>
             <?php } ?>
             <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label text-light">報告内容</label>
                 <select name="class" class="form-select" aria-label="報告内容">
-                    <option selected>内容を選択してください</option>
                     <option value="荒らし">荒らし</option>
                     <option value="迷惑行為">迷惑行為</option>
                     <option value="規約違反">規約違反</option>
