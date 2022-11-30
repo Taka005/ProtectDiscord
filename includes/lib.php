@@ -31,9 +31,9 @@ function dm($id,$message,$token){
     curl_setopt($ch,CURLOPT_URL,"https://discord.com/api/v10/users/@me/channels"); 
     curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
     curl_setopt($ch,CURLOPT_POST,true);
-    curl_setopt($ch,CURLOPT_POSTFIELDS,array(
+    curl_setopt($ch,CURLOPT_POSTFIELDS,json_encode(array(
         "recipient_id"=>$id
-    ));
+    )));
     curl_setopt($ch,CURLOPT_HTTPHEADER,array(
         "Authorization: Bot ".$token,
         "User-Agent:DiscordBot (https://reports.cf, 10)",
@@ -47,9 +47,9 @@ function dm($id,$message,$token){
     curl_setopt($ch,CURLOPT_URL,"https://discord.com/api/v10/channels/".$json["id"]."/messages"); 
     curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
     curl_setopt($ch,CURLOPT_POST,true);
-    curl_setopt($ch,CURLOPT_POSTFIELDS,array(
+    curl_setopt($ch,CURLOPT_POSTFIELDS,json_encode(array(
         "content"=>$message
-    ));
+    )));
     curl_setopt($ch,CURLOPT_HTTPHEADER,array(
         "Authorization: Bot ".$token,
         "User-Agent:DiscordBot (https://reports.cf, 10)",
