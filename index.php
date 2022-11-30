@@ -12,7 +12,7 @@ require __DIR__."/config.php";
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
 <body>
-    <header class="fixed-top ">
+    <header class="fixed-top navbar-expand-md">
         <nav class="navbar avbar-dark bg-dark p-2">
             <div class="container-fluid">
                 <a class="navbar-brand text-light my5" href="./">Protect Discord</a>
