@@ -43,7 +43,7 @@ if(isset($_GET["id"])){
                 <div class="card-header">
                     <?= $user["id"] ?>
                 </div>
-                <img src="<?= "https:\/\/cdn.discordapp.com/avatars/".$user["id"]."/".$user["avatar"].is_animated($user["avatar"])."?size=1024" ?>" class="card-img-top img-thumbnail">
+                <img src="<?= "https:\/\/cdn.discordapp.com/avatars/".$user["id"]."/".$user["avatar"].is_animated($user["avatar"])."?size=1024" ?>" class="card-img-top img-responsive">
                 <div class="card-body">
                     <h5 class="card-title"><?= $user["username"]."#".$user["discriminator"] ?></h5>
                     <p class="card-text">データベースに情報がありませんでした</p>
