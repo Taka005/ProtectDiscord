@@ -7,7 +7,7 @@ if(!isset($_SESSION["user"])){
     header("Location: ".url($client_id,$redirect_url,$scopes));
 }
 
-if(isset($_POST["id"])&&isset($_POST["class"])&&isset($_POST["content"])){
+if($_POST["id"]&&$_POST["class"]&&$_POST["content"]){
     $user = user(htmlspecialchars($_POST["id"]),$token);
     if(isset($user)){
         $success = true;
