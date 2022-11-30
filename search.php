@@ -38,7 +38,7 @@ if(isset($_GET["id"])){
     </header>
 	<main>    
         <?php if(isset($user)&&isset($_GET["id"])){ ?>
-            <div class="card text-center">
+            <div class="card text-center mb-3">
                 <div class="card-header">
                     <?= $user["id"] ?>
                 </div>
@@ -51,14 +51,14 @@ if(isset($_GET["id"])){
                 </div>
             </div>
         <?php }else if(isset($_GET["id"])){ ?>
-            <div class="card text-center">
+            <div class="card text-center mb-3">
                 <div class="card-body">
                     <h5 class="card-title">対象のユーザが見つかりませんでした</h5>
                     <a href="./" class="btn btn-outline-dark">戻る</a>
                 </div>
             </div>
         <?php }else{ ?>
-            <div class="card text-center">
+            <div class="card text-center mb-3">
                 <div class="card-body">
                     <h5 class="card-title">検索するユーザーを指定してください</h5>
                     <a href="./" class="btn btn-outline-dark">戻る</a>
