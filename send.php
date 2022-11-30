@@ -48,24 +48,26 @@ if(isset($_POST["id"])&&isset($_POST["class"])&&isset($_POST["content"])){
         </nav>
     </header>
 	<main>    
-    <?php if($success){ ?>
-        <div class="card text-center mb-3">
-            <div class="card-body">
-                <h5 class="card-title">正常に送信されました</h5>
-                <p class="card-text">審査には時間がかかることがあります<br>審査に通過するとデータベースに登録されます</p>
-                <a href="./" class="btn btn-primary">トップに戻る</a>
-                <a href="./log" class="btn btn-secondary">ログ</a>
-            </div>
+        <div class="position-absolute top-50 start-50 translate-middle">
+            <?php if($success){ ?>
+                <div class="card text-center mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">正常に送信されました</h5>
+                        <p class="card-text">審査には時間がかかることがあります<br>審査に通過するとデータベースに登録されます</p>
+                        <a href="./" class="btn btn-primary">トップに戻る</a>
+                        <a href="./log" class="btn btn-secondary">ログ</a>
+                    </div>
+                </div>
+            <?php }else{ ?>
+                <div class="card text-center mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">正常に送信できませんでした</h5>
+                        <p class="card-text">一部の項目が入力されていないか、指定したユーザーが存在しませんでした</p>
+                        <a href="./" class="btn btn-primary">トップに戻る</a>
+                    </div>
+                </div>
+            <?php } ?>
         </div>
-    <?php }else{ ?>
-        <div class="card text-center mb-3">
-            <div class="card-body">
-                <h5 class="card-title">正常に送信できませんでした</h5>
-                <p class="card-text">一部の項目が入力されていないか、指定したユーザーが存在しませんでした</p>
-                <a href="./" class="btn btn-primary">トップに戻る</a>
-            </div>
-        </div>
-    <?php } ?>
 	</main>    
     <script src="./assets/js/script.js"></script>
 </body>
