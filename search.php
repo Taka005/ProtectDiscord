@@ -40,12 +40,10 @@ if(isset($_GET["id"])){
         <div class="position-absolute top-50 start-50 translate-middle">
         <?php if(isset($user)&&isset($_GET["id"])){ ?>
             <div class="card text-center ">
-                <div class="card-header">
-                    <?= $user["id"] ?>
-                </div>
                 <img src="<?= "https:\/\/cdn.discordapp.com/avatars/".$user["id"]."/".$user["avatar"].is_animated($user["avatar"])."?size=1024" ?>" class="card-img-top img-responsive">
                 <div class="card-body">
                     <h5 class="card-title"><?= $user["username"]."#".$user["discriminator"] ?></h5>
+                    <h6 class="card-subtitle mb-2 text-muted"><?= $user["id"] ?></h6>
                     <p class="card-text">データベースに情報がありませんでした</p>
                     <a href="./report?id=<?= $user["id"] ?>" class="btn btn-danger">報告</a>
                     <a href="./" class="btn btn-outline-dark">戻る</a>
