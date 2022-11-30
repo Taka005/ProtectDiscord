@@ -13,7 +13,7 @@ require __DIR__."/config.php";
 </head>
 <body>
     <header class="fixed-top">
-        <nav class="navbar-expand-md avbar-dark bg-dark p-2">
+        <nav class="navbar navbar-expand-md avbar-dark bg-dark p-2">
             <div class="container-fluid">
                 <a class="navbar-brand text-light my5" href="./">Protect Discord</a>
                 <form class="container-fluid justify-content-start">
