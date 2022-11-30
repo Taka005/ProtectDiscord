@@ -37,8 +37,9 @@ if(isset($_GET["id"])){
         </nav>
     </header>
 	<main>    
+        <div class="mb-4 position-absolute top-50 start-50 translate-middle">
         <?php if(isset($user)&&isset($_GET["id"])){ ?>
-            <div class="card text-center mb-3">
+            <div class="card text-center ">
                 <div class="card-header">
                     <?= $user["id"] ?>
                 </div>
@@ -65,6 +66,7 @@ if(isset($_GET["id"])){
                 </div>
             </div>
         <?php } ?>
+        </div>
 	</main>
     <script src="./assets/js/script.js"></script>
 </body>

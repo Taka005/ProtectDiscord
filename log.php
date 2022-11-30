@@ -32,7 +32,7 @@ require __DIR__."/config.php";
         </nav>
     </header>
 	<main>    
-        <div class="position-absolute start-50 translate-middle mb-3">
+        <div class="position-absolute start-50 translate-middle">
 		    <h1 class="text-center text-light display-4">ログ</h1>
         </div>
 	</main>    

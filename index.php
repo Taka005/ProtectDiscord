@@ -32,7 +32,7 @@ require __DIR__."/config.php";
         </nav>
     </header>
 	<main>    
-        <div class="position-absolute start-50 translate-middle mb-3">
+        <div class="position-absolute start-50 translate-middle">
 		    <h1 class="text-center text-light my-5 display-4">Protect Discord</h1>
         </div>
         <form action="./search" method="get" class="mb-4 position-absolute top-50 start-50 translate-middle">
