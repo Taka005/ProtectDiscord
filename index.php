@@ -20,11 +20,9 @@ require __DIR__."/config.php";
                     <span class="navbar-toggler-icon">
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <form class="container-fluid justify-content-start">
-                        <a class="btn btn-sm btn-outline-secondary nav-link" href="./terms" role="button">利用規約</a>
-                        <a class="btn btn-sm btn-outline-secondary nav-link" href="./privacy-policy" role="button">プライバシーポリシー</a>
-                        <a class="btn btn-sm btn-outline-secondary nav-link" href="https://discord.gg/7xHNfqYgxb" target="_blank" role="button">サポートサーバー</a>
-                    </form>
+                    <a class="btn btn-sm btn-outline-secondary" href="./terms" role="button">利用規約</a>
+                    <a class="btn btn-sm btn-outline-secondary" href="./privacy-policy" role="button">プライバシーポリシー</a>
+                    <a class="btn btn-sm btn-outline-secondary" href="https://discord.gg/7xHNfqYgxb" target="_blank" role="button">サポートサーバー</a>
                     <form class="form-inline mt-2 mt-md-0">
                         <?php if(!isset($_SESSION["user"])){ ?>
                             <a class="btn btn-outline-success my-2 my-sm-0" href="<?= url($client_id,$redirect_url,$scopes) ?>" role="button">ログイン</a>
