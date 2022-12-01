@@ -15,15 +15,15 @@ require __DIR__."/config.php";
     <body>
         <header>
             <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-                <a class="navbar-brand text-light my5" href="./">Protect Discord</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand text-light" href="./">Protect Discord</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-expanded="false">
                     <span class="navbar-toggler-icon">
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <form class="container-fluid justify-content-start">
-                        <a class="btn btn-sm btn-outline-secondary" href="./terms" role="button">利用規約</a>
-                        <a class="btn btn-sm btn-outline-secondary" href="./privacy-policy" role="button">プライバシーポリシー</a>
-                        <a class="btn btn-sm btn-outline-secondary" href="https://discord.gg/7xHNfqYgxb" target="_blank" role="button">サポートサーバー</a>
+                        <a class="btn btn-sm btn-outline-secondary nav-link" href="./terms" role="button">利用規約</a>
+                        <a class="btn btn-sm btn-outline-secondary nav-link" href="./privacy-policy" role="button">プライバシーポリシー</a>
+                        <a class="btn btn-sm btn-outline-secondary nav-link" href="https://discord.gg/7xHNfqYgxb" target="_blank" role="button">サポートサーバー</a>
                     </form>
                     <form class="form-inline mt-2 mt-md-0">
                         <?php if(!isset($_SESSION["user"])){ ?>
