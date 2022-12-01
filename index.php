@@ -16,14 +16,14 @@ require __DIR__."/config.php";
         <header>
             <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
                 <a class="navbar-brand text-light" href="./">Protect Discord</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-expanded="false">
-                    <span class="navbar-toggler-icon">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <a class="btn btn-sm btn-outline-secondary" href="./terms" role="button">利用規約</a>
                     <a class="btn btn-sm btn-outline-secondary" href="./privacy-policy" role="button">プライバシーポリシー</a>
                     <a class="btn btn-sm btn-outline-secondary" href="https://discord.gg/7xHNfqYgxb" target="_blank" role="button">サポートサーバー</a>
-                    <form class="form-inline mt-2 mt-md-0">
+                    <form class="justify-content-end">
                         <?php if(!isset($_SESSION["user"])){ ?>
                             <a class="btn btn-outline-success my-2 my-sm-0" href="<?= url($client_id,$redirect_url,$scopes) ?>" role="button">ログイン</a>
                         <?php }else{ ?>
