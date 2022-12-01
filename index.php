@@ -24,7 +24,7 @@ require __DIR__."/config.php";
                         <a class="btn btn-sm btn-outline-secondary" href="./terms" role="button">利用規約</a>
                         <a class="btn btn-sm btn-outline-secondary" href="./privacy-policy" role="button">プライバシーポリシー</a>
                         <a class="btn btn-sm btn-outline-secondary" href="https://discord.gg/7xHNfqYgxb" target="_blank" role="button">サポートサーバー</a>
-                        <form class="justify-content-end container-fluid">
+                        <form class="d-flex">
                             <?php if(!isset($_SESSION["user"])){ ?>
                                 <a class="btn btn-outline-success" href="<?= url($client_id,$redirect_url,$scopes) ?>" role="button">ログイン</a>
                             <?php }else{ ?>
