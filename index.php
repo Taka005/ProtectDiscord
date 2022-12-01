@@ -18,21 +18,21 @@ require __DIR__."/config.php";
             <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
                 <div class="container-fluid">
                     <a class="navbar-brand text-light" href="./">Protect Discord</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <a class="btn btn-sm btn-outline-secondary" href="./terms" role="button">利用規約</a>
                         <a class="btn btn-sm btn-outline-secondary" href="./privacy-policy" role="button">プライバシーポリシー</a>
                         <a class="btn btn-sm btn-outline-secondary" href="https://discord.gg/7xHNfqYgxb" target="_blank" role="button">サポートサーバー</a>
-                        <form class="d-flex">
-                            <?php if(!isset($_SESSION["user"])){ ?>
-                                <a class="btn btn-outline-success" href="<?= url($client_id,$redirect_url,$scopes) ?>" role="button">ログイン</a>
-                            <?php }else{ ?>
-                                <a class="btn btn-outline-danger"  href="./includes/logout" role="button">ログアウト</a>
-                            <?php } ?>
-                        </form>
                     </div>
+                    <form class="d-flex">
+                        <?php if(!isset($_SESSION["user"])){ ?>
+                            <a class="btn btn-outline-success" href="<?= url($client_id,$redirect_url,$scopes) ?>" role="button">ログイン</a>
+                        <?php }else{ ?>
+                            <a class="btn btn-outline-danger"  href="./includes/logout" role="button">ログアウト</a>
+                        <?php } ?>
+                    </form>
                 </div>
             </nav>
         </header>
