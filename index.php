@@ -16,6 +16,9 @@ require __DIR__."/config.php";
         <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand text-light my5" href="./">Protect Discord</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                 <form class="container-fluid justify-content-start">
                     <a class="btn btn-sm btn-outline-secondary" href="./terms" role="button">利用規約</a>
