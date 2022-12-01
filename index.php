@@ -2,7 +2,6 @@
 require __DIR__."/includes/discord.php";
 require __DIR__."/config.php";
 ?>
-<!DOCTYPE html>
 <html lang="ja">
     <head>
         <meta charset="utf-8">
