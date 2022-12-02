@@ -35,7 +35,7 @@ function init($redirect_url,$client_id,$client_secret){
     $_SESSION["access_token"] = $results["access_token"];
 }
 
-function get_user(){
+function get_user($pdo){
     $url = $GLOBALS["base_url"]."/api/users/@me";
     $headers = array("Content-Type: application/x-www-form-urlencoded","Authorization: Bearer ".$_SESSION["access_token"]);
     $curl = curl_init();
@@ -55,6 +55,13 @@ function get_user(){
     $_SESSION["user_flags"] = $results["public_flags"];
     $_SESSION["user_premium"] = $results["premium_type"];
 
-    //ログイン情報記録処理をする
+    if(!empty($results["id"])){
+        $stmt = $pdo->prepare("INSERT INTO user (id, time) VALUES(:id, :time)");
+ 
+        $stmt->bindValue(":id",$results["id"]);
+        $stmt->bindValue(":time",date("Y/m/d"));
+     
+        $stmt->execute();
+    }
 }
 ?>

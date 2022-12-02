@@ -1,16 +1,6 @@
 <?php
 require __DIR__."/includes/discord.php";
 require __DIR__."/config.php";
-
-
-if($_SESSION["user"]){
-    header("Location: ".url($client_id,$redirect_url,$scopes));
-}
-
-if(!in_array($_SESSION["user_id"],$admin)){
-    header("Location: ./");
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="ja">
