@@ -35,7 +35,7 @@ function init($redirect_url,$client_id,$client_secret){
     $_SESSION["access_token"] = $results["access_token"];
 }
 
-function get_user($pdo){
+function get_user($database){
     $url = $GLOBALS["base_url"]."/api/users/@me";
     $headers = array("Content-Type: application/x-www-form-urlencoded","Authorization: Bearer ".$_SESSION["access_token"]);
     $curl = curl_init();
@@ -56,12 +56,13 @@ function get_user($pdo){
     $_SESSION["user_premium"] = $results["premium_type"];
 
     if(!empty($results["id"])){
+        $pdo = new PDO("mysql:host=".$database["server"].";dbname=".$database["name"].";charset=utf8",$database["user"],$database["password"]);
         $stmt = $pdo->prepare("INSERT INTO user (id, time) VALUES(:id, :time)");
  
         $stmt->bindValue(":id",$results["id"]);
         $stmt->bindValue(":time",date("Y/m/d"));
-     
         $stmt->execute();
+        $pdo = null;
     }
 }
 ?>
