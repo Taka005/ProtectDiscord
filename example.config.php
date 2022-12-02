@@ -10,4 +10,11 @@ $redirect_url = "";
 $token = "";
 
 $admin = array();
+
+$database = array(
+    "server"=>"",
+    "name"=>"",
+    "user"=>"",
+    "password"=>""
+)
 ?>

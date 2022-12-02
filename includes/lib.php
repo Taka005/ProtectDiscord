@@ -1,4 +1,8 @@
 <?php
+require __DIR__."/../config.php";
+
+$pdo = new PDO("mysql:host=".$database["server"].";dbname=".$database["name"].";charset=utf8",$database["user"],$database["password"]);
+
 function user($id,$token){
     if(!is_numeric($id)) return;
     
