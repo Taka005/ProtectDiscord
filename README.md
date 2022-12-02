@@ -1,1 +1,2 @@
 # ProtectDiscord
+Discord ブラックリストシステム
