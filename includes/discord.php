@@ -57,12 +57,7 @@ function get_user($database){
 
     if(!empty($results["id"])){
         $pdo = new PDO("mysql:host=".$database["server"].";dbname=".$database["name"].";charset=utf8",$database["user"],$database["password"]);
-        $stmt = $pdo->prepare("INSERT INTO user (id, time) VALUES(:id, :time)");
- 
-        $stmt->bindValue(":id",$results["id"]);
-        $stmt->bindValue(":time",date("Y/m/d"));
-        $stmt->execute();
-        $pdo = null;
+        $pdo->query("INSERT INTO user (id, time) VALUES(".$results["id"].", ".date("Y/m/d").")");
     }
 }
 ?>
