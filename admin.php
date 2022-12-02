@@ -7,7 +7,7 @@ if(!isset($_SESSION["user"])){
     header("Location: ".url($client_id,$redirect_url,$scopes));
 }
 
-if(!in_array($_SESSION["user"],$admin)){
+if(!in_array($_SESSION["user_id"],$admin)){
     header("Location: ./");
 }
 
