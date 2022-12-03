@@ -1,4 +1,5 @@
 <?php
+require __DIR__."/../config.php";
 session_start();
 
 $GLOBALS["base_url"] = "https://discord.com";
@@ -35,7 +36,7 @@ function init($redirect_url,$client_id,$client_secret){
     $_SESSION["access_token"] = $results["access_token"];
 }
 
-function get_user($database){
+function get_user(){
     $url = $GLOBALS["base_url"]."/api/users/@me";
     $headers = array("Content-Type: application/x-www-form-urlencoded","Authorization: Bearer ".$_SESSION["access_token"]);
     $curl = curl_init();
@@ -56,7 +57,8 @@ function get_user($database){
     $_SESSION["user_premium"] = $results["premium_type"];
 
     if(!empty($results["id"])){
-        sql($database,"INSERT INTO user (id, time) VALUES(".$results["id"].",NOW()) ON DUPLICATE KEY UPDATE id = VALUES (id),time = VALUES (time);");
+        $pdo = new PDO("mysql:host=".$database["server"].";dbname=".$database["name"].";charset=utf8",$database["user"],$database["password"]);
+        $pdo->query("INSERT INTO user (id, time) VALUES(".$results["id"].",NOW()) ON DUPLICATE KEY UPDATE id = VALUES (id),time = VALUES (time);"); 
     }
 }
 ?>

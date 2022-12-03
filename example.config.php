@@ -16,5 +16,5 @@ $database = array(
     "name"=>"",
     "user"=>"",
     "password"=>""
-)
+);
 ?>
