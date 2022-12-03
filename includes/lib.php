@@ -1,6 +1,4 @@
 <?php
-require __DIR__."/../config.php";
-
 function user($id,$token){
     if(!is_numeric($id)) return;
     
