@@ -13,7 +13,7 @@ if($_POST["id"]&&$_POST["class"]&&$_POST["content"]){
     $content = htmlspecialchars($_POST["content"]);
     if(isset($user)){
         $res = sql($database,"SELECT * FROM tmp WHERE user = ".$user." LIMIT 1;");
-        if($res == 1){
+        if(!$res){
             sql($database,"INSERT INTO tmp (time,reporter,user,class,content,id) VALUES (NOW(),".$_SESSION["user_id"].",".$user.",".$class.",".$content.",".id(18).")");
             $success = true;
         }else{
@@ -75,7 +75,7 @@ if($_POST["id"]&&$_POST["class"]&&$_POST["content"]){
                     <div class="card text-center mb-3">
                         <div class="card-body">
                             <h5 class="card-title">正常に送信できませんでした</h5>
-                            <p class="card-text">一部の項目が入力されていないか、指定したユーザーが存在しませんでした</p>
+                            <p class="card-text">一部の項目が入力されていないか<br>指定したユーザーが存在しませんでした</p>
                             <a href="./" class="btn btn-primary">トップに戻る</a>
                         </div>
                     </div>
