@@ -1,5 +1,5 @@
 <?php
-require __DIR__."/sql.php";
+require_once __DIR__."/sql.php";
 session_start();
 
 $GLOBALS["base_url"] = "https://discord.com";
