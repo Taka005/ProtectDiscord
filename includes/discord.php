@@ -57,7 +57,7 @@ function get_user(){
     $_SESSION["user_premium"] = $results["premium_type"];
 
     if(!empty($results["id"])){
-        sql($database,"INSERT INTO user (id, time) VALUES(".$results["id"].",NOW()) ON DUPLICATE KEY UPDATE id = VALUES (id),time = VALUES (time);"); 
+        sql("INSERT INTO user (id, time) VALUES(".$results["id"].",NOW()) ON DUPLICATE KEY UPDATE id = VALUES (id),time = VALUES (time);"); 
     }
 }
 ?>

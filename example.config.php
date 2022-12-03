@@ -17,4 +17,11 @@ $database = array(
     "user"=>"",
     "password"=>""
 );
+
+return [
+    "server"=>"",
+    "name"=>"",
+    "user"=>"",
+    "password"=>""
+];
 ?>
