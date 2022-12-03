@@ -2,6 +2,7 @@
 require __DIR__."/includes/discord.php";
 require __DIR__."/config.php";
 require __DIR__."/includes/lib.php";
+require __DIR__."/includes/sql.php";
 
 if(!isset($_SESSION["user"])){
     header("Location: ".url($client_id,$redirect_url,$scopes));
@@ -10,10 +11,9 @@ if(!isset($_SESSION["user"])){
 if($_POST["id"]&&$_POST["class"]&&$_POST["content"]){
     $user = user(htmlspecialchars($_POST["id"]),$token);
     if(isset($user)){
-        $pdo = new PDO("mysql:host=".$database["server"].";dbname=".$database["name"].";charset=utf8",$database["user"],$database["password"]);
-        $res = $pdo->query("SELECT * FROM tmp WHERE user = ".$user["id"]." LIMIT 1;")->fetch(PDO::FETCH_BOTH);
+        $res = sql("SELECT * FROM tmp WHERE user = ".$user["id"]." LIMIT 1;")->fetch(PDO::FETCH_BOTH);
         if(!$res){
-            $pdo->query("INSERT INTO tmp (time,reporter,user,class,content,id) VALUES (NOW(),".$_SESSION["user_id"].",".$user["id"].",".$_POST["class"].",".$_POST["content"].",".id(18).")");
+            sql("INSERT INTO tmp (time,reporter,user,class,content,id) VALUES (NOW(),".$_SESSION["user_id"].",".$user["id"].",".$_POST["class"].",".$_POST["content"].",".id(18).")");
             $success = true;
         }else{
             $success = false;
