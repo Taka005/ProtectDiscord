@@ -57,7 +57,20 @@ function get_user($database){
 
     if(!empty($results["id"])){
         $pdo = new PDO("mysql:host=".$database["server"].";dbname=".$database["name"].";charset=utf8",$database["user"],$database["password"]);
-        $pdo->query("INSERT INTO user (id, time) VALUES(".$results["id"].", NOW())");
+        $res = $pdo->query("SELECT * FROM user");
+        $data = $res->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($data as $row){
+            if($row["id"]==$results["id"]){
+                $pdo->query("UPDATE user SET time = NOW()");
+                $add = false;
+            }else{
+                $add = true;
+            }
+        }
+
+        if($add){
+            $pdo->query("INSERT INTO user (id, time) VALUES(".$results["id"].", NOW())");
+        }
     }
 }
 ?>
