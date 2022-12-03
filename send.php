@@ -9,8 +9,17 @@ if(!isset($_SESSION["user"])){
 
 if($_POST["id"]&&$_POST["class"]&&$_POST["content"]){
     $user = user(htmlspecialchars($_POST["id"]),$token);
+    $class = htmlspecialchars($_POST["id"]);
+    $content = htmlspecialchars($_POST["content"]);
     if(isset($user)){
-        $success = true;
+        $pdo = new PDO("mysql:host=".$database["server"].";dbname=".$database["name"].";charset=utf8",$database["user"],$database["password"]);
+        $res = $pdo->query("SELECT * FROM tmp WHERE user = ".$user." LIMIT 1;");
+        if($res == 1){
+            $pdo->query("INSERT INTO tmp (time,reporter,user,class,content,id) VALUES (NOW(),".$_SESSION["user_id"].",".$user.",".$class.",".$content.",".id(18).")");
+            $success = true;
+        }else{
+            $success = false;
+        }
     }else{
         $success = false;
     }

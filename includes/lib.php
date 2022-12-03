@@ -27,4 +27,9 @@ function is_animated($image){
 		return ".png";
 	}
 }
+
+function id($n){
+    $random = substr(str_shuffle("abcdefghijkmnpqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWZY0123456789"),0,$n);
+    return $random;
+}
 ?>
