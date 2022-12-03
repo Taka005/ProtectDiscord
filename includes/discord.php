@@ -1,4 +1,7 @@
 <?php
+require __DIR__."/lib.php";
+require __DIR__."/../config.php";
+
 session_start();
 
 $GLOBALS["base_url"] = "https://discord.com";
@@ -56,8 +59,7 @@ function get_user($database){
     $_SESSION["user_premium"] = $results["premium_type"];
 
     if(!empty($results["id"])){
-        $pdo = new PDO("mysql:host=".$database["server"].";dbname=".$database["name"].";charset=utf8",$database["user"],$database["password"]);
-        $pdo->query("INSERT INTO user (id, time) VALUES(".$results["id"].",NOW()) ON DUPLICATE KEY UPDATE id = VALUES (id),time = VALUES (time);");
+        sql($database,"INSERT INTO user (id, time) VALUES(".$results["id"].",NOW()) ON DUPLICATE KEY UPDATE id = VALUES (id),time = VALUES (time);");
     }
 }
 ?>
