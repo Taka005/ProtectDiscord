@@ -9,12 +9,12 @@ if(!isset($_SESSION["user"])){
 
 if($_POST["id"]&&$_POST["class"]&&$_POST["content"]){
     $user = user(htmlspecialchars($_POST["id"]),$token);
-    $class = htmlspecialchars($_POST["id"]);
+    $class = htmlspecialchars($_POST["class"]);
     $content = htmlspecialchars($_POST["content"]);
     if(isset($user)){
-        $res = sql($database,"SELECT * FROM tmp WHERE user = ".$user." LIMIT 1;");
+        $res = sql($database,"SELECT * FROM tmp WHERE user = ".$user["id"]." LIMIT 1;");
         if(!$res){
-            sql($database,"INSERT INTO tmp (time,reporter,user,class,content,id) VALUES (NOW(),".$_SESSION["user_id"].",".$user.",".$class.",".$content.",".id(18).")");
+            sql($database,"INSERT INTO tmp (time,reporter,user,class,content,id) VALUES (NOW(),".$_SESSION["user_id"].",".$user["id"].",".$class.",".$content.",".id(18).")");
             $success = true;
         }else{
             $success = false;
