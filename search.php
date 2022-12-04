@@ -1,7 +1,7 @@
 <?php
-require __DIR__."/includes/discord.php";
-require __DIR__."/config.php";
-require __DIR__."/includes/lib.php";
+require_once __DIR__."/includes/discord.php";
+require_once __DIR__."/config.php";
+require_once __DIR__."/includes/lib.php";
 
 if(isset($_GET["id"])){
     $user = user(htmlspecialchars($_GET["id"]),$token);
