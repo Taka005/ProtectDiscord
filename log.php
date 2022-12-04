@@ -40,34 +40,31 @@ $res = sql("SELECT * FROM log;")->fetchALL(PDO::FETCH_BOTH);
             </nav>
         </header>
 	    <main>    
-            <div class="mb-4 position-absolute start-50 translate-middle">
-		        <h1 class="text-center text-light my-5 display-4">ログ</h1>
-            </div>
-            <div class="mb-4 position-absolute start-50 translate-middle">
-            <table class="table table-light">
-                <thead>
-                    <tr>
-                        <th scope="col">時間</th>
-                        <th scope="col">イベント</th>
-                        <th scope="col">対象ユーザー</th>
-                        <th scope="col">報告ユーザー</th>
-                        <th scope="col">理由</th>
-                        <th scope="col">ID</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach($res as $row){ ?>
+            <div class="mb-4 position-absolute top-50 start-50 translate-middle">
+                <table class="table table-light">
+                    <thead>
                         <tr>
-                            <th scope="row"><?= $row["time"] ?></th>
-                            <td><?= $row["event"] ?></td>
-                            <td><?= $row["user"] ?></td>
-                            <td><?= $row["reporter"] ?></td>
-                            <td><?= $row["reason"] ?></td>
-                            <td><?= $row["id"] ?></td>
+                            <th scope="col">時間</th>
+                            <th scope="col">イベント</th>
+                            <th scope="col">対象ユーザー</th>
+                            <th scope="col">報告ユーザー</th>
+                            <th scope="col">理由</th>
+                            <th scope="col">ID</th>
                         </tr>
-                    <?php } ?>
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        <?php foreach($res as $row){ ?>
+                            <tr>
+                                <th scope="row"><?= $row["time"] ?></th>
+                                <td><?=  $row["event"] ?></td>
+                                <td><?= htmlspecialchars($row["user"]) ?></td>
+                                <td><?= htmlspecialchars($row["reporter"]) ?></td>
+                                <td><?= htmlspecialchars($row["reason"]) ?></td>
+                                <td><?= htmlspecialchars($row["id"]) ?></td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
             </div>
 	    </main>    
         <script src="./assets/js/script.js"></script>

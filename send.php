@@ -15,15 +15,15 @@ if($_POST["id"]&&$_POST["class"]&&$_POST["content"]){
             $id = id(18);
             sql("INSERT INTO tmp (time,reporter,user,class,content,id) VALUES (NOW(),".$_SESSION["user_id"].",".$user["id"].",'".$_POST["class"]."','".$_POST["content"]."','".id(18)."')");
             sql("INSERT INTO log (time,reporter,user,reason,id,event) VALUES (NOW(),".$_SESSION["user_id"].",".$user["id"].",'".$_POST["class"]."','".id(18)."','報告')");
-            $success = true;
+            $message = null;
         }else{
-            $success = false;
+            $message = "報告されたユーザーは既に報告されています";
         }
     }else{
-        $success = false;
+        $success = "指定したユーザーが存在しませんでした";
     }
 }else{
-    $success = false;
+    $success = "送信内容が不十分です。全ての欄を入力してください";
 }
 ?>
 <!DOCTYPE html>
@@ -62,7 +62,7 @@ if($_POST["id"]&&$_POST["class"]&&$_POST["content"]){
         </header>
 	    <main>    
             <div class="position-absolute top-50 start-50 translate-middle">
-                <?php if($success){ ?>
+                <?php if(!$message){ ?>
                     <div class="card text-center mb-3">
                         <div class="card-body">
                             <h5 class="card-title">正常に送信されました</h5>
@@ -75,7 +75,7 @@ if($_POST["id"]&&$_POST["class"]&&$_POST["content"]){
                     <div class="card text-center mb-3">
                         <div class="card-body">
                             <h5 class="card-title">正常に送信できませんでした</h5>
-                            <p class="card-text">一部の項目が入力されていないか<br>指定したユーザーが存在しませんでした</p>
+                            <p class="card-text"><?= $message ?></p>
                             <a href="./" class="btn btn-primary">トップに戻る</a>
                         </div>
                     </div>
