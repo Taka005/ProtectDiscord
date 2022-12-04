@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__."/lib.php";
+
 session_start();
 
 $GLOBALS["base_url"] = "https://discord.com";
