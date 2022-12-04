@@ -41,7 +41,7 @@ $res = sql("SELECT * FROM log;")->fetchALL(PDO::FETCH_BOTH);
         </header>
 	    <main>    
             <div class="mb-4 position-absolute top-50 start-50 translate-middle">
-                <table class="table table-light">
+                <table class="table table-light table-bordered table-sm align-middle">
                     <thead>
                         <tr>
                             <th scope="col">時間</th>
