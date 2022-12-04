@@ -3,7 +3,7 @@ require_once __DIR__."/includes/discord.php";
 require_once __DIR__."/config.php";
 require_once __DIR__."/includes/lib.php";
 
-$res = sql("SELECT * FROM log;")->fetch(PDO::FETCH_BOTH);
+$res = sql("SELECT * FROM log;")->fetchALL(PDO::FETCH_BOTH);
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -41,7 +41,7 @@ $res = sql("SELECT * FROM log;")->fetch(PDO::FETCH_BOTH);
         </header>
 	    <main>    
             <div class="position-absolute start-50 translate-middle">
-            <table class="table">
+            <table class="table table-light">
                 <thead>
                     <tr>
                         <th scope="col">時間</th>
