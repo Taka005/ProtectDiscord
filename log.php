@@ -1,6 +1,9 @@
 <?php
 require_once __DIR__."/includes/discord.php";
 require_once __DIR__."/config.php";
+require_once __DIR__."/includes/lib.php";
+
+$res = sql("SELECT * FROM log;")->fetch(PDO::FETCH_BOTH);
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -38,7 +41,30 @@ require_once __DIR__."/config.php";
         </header>
 	    <main>    
             <div class="position-absolute start-50 translate-middle">
-		        <h1 class="text-center text-light display-4">ログ</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">時間</th>
+                        <th scope="col">イベント</th>
+                        <th scope="col">対象ユーザー</th>
+                        <th scope="col">報告ユーザー</th>
+                        <th scope="col">理由</th>
+                        <th scope="col">ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($res as $row){ ?>
+                        <tr>
+                            <th scope="row"><?= $row["time"] ?></th>
+                            <td><?= $row["event"] ?></td>
+                            <td><?= $row["user"] ?></td>
+                            <td><?= $row["reporter"] ?></td>
+                            <td><?= $row["reason"] ?></td>
+                            <td><?= $row["id"] ?></td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
             </div>
 	    </main>    
         <script src="./assets/js/script.js"></script>
