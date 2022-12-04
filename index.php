@@ -37,10 +37,8 @@ require_once __DIR__."/config.php";
             </nav>
         </header>
 	    <main>    
-            <div class="mb-4 position-absolute top-50 start-50 translate-middle">
-		        <h1 class="text-center text-light my-5 display-4">Protect Discord</h1>
-            </div>
             <form action="./search" method="get" class="mb-4 position-absolute top-50 start-50 translate-middle">
+            <label for="exampleFormControlInput1" class="form-label text-center">ユーザーが登録されているかを確認できます</label>
                 <input name="id" type="number" class="form-control form-control-lg" placeholder="検索するユーザーID" autocomplete="off" require_onced>
             </form>
 	    </main>   
