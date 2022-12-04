@@ -40,7 +40,10 @@ $res = sql("SELECT * FROM log;")->fetchALL(PDO::FETCH_BOTH);
             </nav>
         </header>
 	    <main>    
-            <div class="position-absolute start-50 translate-middle">
+            <div class="mb-4 position-absolute start-50 translate-middle">
+		        <h1 class="text-center text-light my-5 display-4">ログ</h1>
+            </div>
+            <div class="mb-4 position-absolute start-50 translate-middle">
             <table class="table table-light">
                 <thead>
                     <tr>
