@@ -81,11 +81,11 @@ $res = sql("SELECT * FROM tmp;")->fetchALL(PDO::FETCH_BOTH);
         </header>
 	    <main>    
             <?php if($success == true){ ?>
-                <div class="alert alert-success" role="alert">
+                <div class="alert alert-success text-center" role="alert">
                     正常に追加しました
                 </div>
             <?php }else if($success == false){ ?>
-                <div class="alert alert-danger" role="alert">
+                <div class="alert alert-danger text-center" role="alert">
                     追加できませんでした
                 </div>
             <?php } ?>
