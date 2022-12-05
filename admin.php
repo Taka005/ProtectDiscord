@@ -1,15 +1,48 @@
 <?php
 require_once __DIR__."/includes/discord.php";
 require_once __DIR__."/config.php";
+require_once __DIR__."/includes/lib.php";
 
-
-if($_SESSION["user"]){
+if(!isset($_SESSION["user"])){
     header("Location: ".url($client_id,$redirect_url,$scopes));
 }
 
 if(!in_array($_SESSION["user_id"],$admin)){
     header("Location: ./");
 }
+
+if(isset($_POST["pass"])){
+    $tmp = sql("SELECT * FROM tmp WHERE user = ".$_POST["pass"]." LIMIT 1;")->fetch(PDO::FETCH_BOTH);
+    if($tmp){
+        sql("INSERT INTO report (time,reporter,user,class,content,id,block) VALUES (NOW(),".$tmp["reporter"].",".$tmp["user"].",'".$tmp["class"]."','".$tmp["content"]."','".$tmp["id"]."',false)");
+        sql("INSERT INTO log (time,reporter,user,reason,id,event) VALUES (NOW(),".$tmp["reporter"].",".$tmp["user"].",'".$tmp["class"]."','".$tmp["id"]."','追加')");
+        sql("DELETE FROM tmp WHERE user=".$tmp["user"]." LIMIT 1;");
+        $success = true;
+    }else{
+        $success = false;
+    }
+}else if(isset($_POST["block"])){
+    $tmp = sql("SELECT * FROM tmp WHERE user = ".$_POST["pass"]." LIMIT 1;")->fetch(PDO::FETCH_BOTH);
+    if($tmp){
+        sql("INSERT INTO report (time,reporter,user,class,content,id,block) VALUES (NOW(),".$tmp["reporter"].",".$tmp["user"].",'".$tmp["class"]."','".$tmp["content"]."','".$tmp["id"]."',true)");
+        sql("INSERT INTO log (time,reporter,user,reason,id,event) VALUES (NOW(),".$tmp["reporter"].",".$tmp["user"].",'".$tmp["class"]."','".$tmp["id"]."','追加(ブロック)')");
+        sql("DELETE FROM tmp WHERE user=".$tmp["user"]." LIMIT 1;");
+        $success = true;
+    }else{
+        $success = false;
+    }
+}else if(isset($_POST["reject"])){
+    $tmp = sql("SELECT * FROM tmp WHERE user = ".$_POST["pass"]." LIMIT 1;")->fetch(PDO::FETCH_BOTH);
+    if($tmp){
+        sql("DELETE FROM tmp WHERE user=".$tmp["user"]." LIMIT 1;");
+        sql("INSERT INTO log (time,reporter,user,reason,id,event) VALUES (NOW(),".$tmp["reporter"].",".$tmp["user"].",'".$tmp["class"]."','".$tmp["id"]."','拒否')");
+        $success = true;
+    }else{
+        $success = false;
+    }
+}
+
+$res = sql("SELECT * FROM tmp;")->fetchALL(PDO::FETCH_BOTH);
 
 ?>
 <!DOCTYPE html>
@@ -47,7 +80,46 @@ if(!in_array($_SESSION["user_id"],$admin)){
             </nav>
         </header>
 	    <main>    
-
+            <?php if($success == true){ ?>
+                <div class="alert alert-success" role="alert">
+                    正常に追加しました
+                </div>
+            <?php }else if($success == false){ ?>
+                <div class="alert alert-danger" role="alert">
+                    追加できませんでした
+                </div>
+            <?php } ?>
+            <div class="mb-4 position-absolute top-50 start-50 translate-middle">
+                <table class="table table-light table-bordered table-sm align-middle text-center">
+                    <thead>
+                        <tr>
+                            <th scope="col">時間</th>
+                            <th scope="col">対象ユーザー</th>
+                            <th scope="col">報告ユーザー</th>
+                            <th scope="col">分類</th>
+                            <th scope="col">内容</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($res as $row){ ?>
+                            <tr>
+                                <th scope="row"><?= $row["time"] ?></th>
+                                <td><?= htmlspecialchars($row["user"]) ?></td>
+                                <td><?= htmlspecialchars($row["reporter"]) ?></td>
+                                <td><?= htmlspecialchars($row["class"]) ?></td>
+                                <td><?= htmlspecialchars($row["content"]) ?></td>
+                                <td>
+                                    <form action="./admin" method="post">
+                                        <a name="pass" value="<?= $row["user"] ?>" class="btn btn-outline-success btn-sm" role="button">登録</button>
+                                        <a name="block" value="<?= $row["user"] ?>" class="btn btn-outline-success btn-sm" role="button">ブロック対象として登録</button>
+                                        <a name="reject" value="<?= $row["user"] ?>" class="btn btn-outline-danger btn-sm" role="button">拒否</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </div>
 	    </main>   
         <script src="./assets/js/script.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
